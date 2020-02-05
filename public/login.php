@@ -1,17 +1,19 @@
-<?php require_once("../resources/config.php"); ?>
+<?php require_once("../recources/config.php"); ?>
 
-<?php include(TEMPLATE_FRONT . DS . "header.php") ?>
+<?php include("../recources/templates/font/header.php"); ?>
 
     <!-- Page Content -->
     <div class="container">
 
       <header>
+        <h1 >
             <h1 class="text-center">Login</h1>
-            <h2 class="text-center bg-warning"><?php display_message(); ?></h2>
+            <h1 class= "text-center bg-warning"><?php display_message();?></h1>
         <div class="col-sm-4 col-sm-offset-5">         
             <form class="" action="" method="post" enctype="multipart/form-data">
-                    
-                    <?php login_user(); ?>
+
+                    <?php login_user();?>
+
 
                 <div class="form-group"><label for="">
                     username<input type="text" name="username" class="form-control"></label>
@@ -32,4 +34,6 @@
 
         </div>
 
-   <?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
+ 
+<?php include("../recources/templates/font/footer.php"); ?>
+

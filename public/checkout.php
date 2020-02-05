@@ -1,7 +1,9 @@
-<?php require_once("../resources/config.php"); ?>
-<?php include(TEMPLATE_FRONT . DS . "header.php") ?>
+<?php require_once("../recources/config.php"); ?>
 
 
+<?php include("../recources/templates/font/header.php"); ?>
+
+<?php echo $_SESSION["product_1"];?>
 
 
     <!-- Page Content -->
@@ -11,13 +13,19 @@
 <!-- /.row --> 
 
 <div class="row">
-      <h4 class="text-center bg-danger"><?php display_message(); ?></h4>
+      <h4 class="text-center bg-danger"><?php display_message();?></h4>
       <h1>Checkout</h1>
 
+
+
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_cart">
-<input type="hidden" name="business" value="edwindiaz123-facilitator@gmail.com">
-<input type="hidden" name="currency_code" value="US">
+
+  <!-- Identify your business so that you can collect the payments. -->
+  <input type="hidden" name="business" value="realhmrohankumara@gmail.com">
+
+  <!-- Specify a Buy Now button. -->
+  <input type="hidden" name="cmd" value="_">
+
     <table class="table table-striped">
         <thead>
           <tr>
@@ -29,12 +37,12 @@
           </tr>
         </thead>
         <tbody>
-          <?php cart(); ?>
+            <?php cart();?>
         </tbody>
     </table>
-  <?php echo show_paypal(); ?>
+ <!-- Display the payment button. -->
+<?php echo show_paypal();?>
 </form>
-
 
 
 <!--  ***********CART TOTALS*************-->
@@ -46,8 +54,12 @@
 
 <tr class="cart-subtotal">
 <th>Items:</th>
-<td><span class="amount"><?php 
-echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION['item_quantity'] = "0";?></span></td>
+<td><span class="amount">
+  <?php
+
+  echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION['item_quantity'] = "0";
+
+  ?></span></td>
 </tr>
 <tr class="shipping">
 <th>Shipping and Handling</th>
@@ -56,9 +68,13 @@ echo isset($_SESSION['item_quantity']) ? $_SESSION['item_quantity'] : $_SESSION[
 
 <tr class="order-total">
 <th>Order Total</th>
-<td><strong><span class="amount">&#36;<?php 
-echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = "0";?>
+<td><strong><span class="amount">&#36;
+  
+  <?php
 
+  echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_total'] = "0";
+
+  ?>
 
 
 </span></strong> </td>
@@ -75,9 +91,4 @@ echo isset($_SESSION['item_total']) ? $_SESSION['item_total'] : $_SESSION['item_
  </div><!--Main Content-->
 
 
-    </div>
-    <!-- /.container -->
-
-
-
-<?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
+<?php include("../recources/templates/font/footer.php"); ?>

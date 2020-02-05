@@ -1,6 +1,8 @@
-<?php require_once("../resources/config.php"); ?>
+<?php require_once("../recources/config.php"); ?>
 
-<?php include(TEMPLATE_FRONT . DS . "header.php") ?>
+<?php include("../recources/templates/font/header.php"); ?>
+
+
 
     <!-- Page Content -->
     <div class="container">
@@ -18,7 +20,7 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Latest Product</h3>
+                <h3>Latest Features</h3>
             </div>
         </div>
         <!-- /.row -->
@@ -26,16 +28,14 @@
         <!-- Page Features -->
         <div class="row text-center">
 
-         <?php get_products_in_cat_page(); ?>
-
+           <?php get_products_in_cat_page();?>
 
         </div>
         <!-- /.row -->
 
-      
+        <hr>
 
-    </div>
-    <!-- /.container -->
+<?php include("../recources/templates/font/footer.php"); ?>
+</body>
 
-
-<?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
+</html>

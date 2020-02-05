@@ -1,6 +1,6 @@
-<?php require_once("../resources/config.php"); ?>
+<?php require_once("../recources/config.php"); ?>
 
-<?php include(TEMPLATE_FRONT . DS . "header.php") ?>
+<?php include("../recources/templates/font/header.php"); ?>
 
 
     <!-- Page Content -->
@@ -8,27 +8,33 @@
 
         <div class="row">
 
-          <?php include(TEMPLATE_FRONT . DS . "side_nav.php") ?>
-
-
+        <?php include("../recources/templates/font/side_nav.php"); ?>        
             <div class="col-md-9">
 
                 <div class="row carousel-holder">
 
                     <div class="col-md-12">
+                    
+                        <?php include("../recources/templates/font/slider.php"); ?>  
 
-                      <?php include(TEMPLATE_FRONT . DS . "slider.php") ?>
-                        
                     </div>
 
                 </div>
 
                 <div class="row">
+<!-- 
+                    <h1>
 
-                    <?php get_products(); ?>
+                        <?php echo $_SESSION['product_1'];?>
 
 
-                </div><!-- ROw ends here-->
+                    </h1> -->
+
+                    <?php get_products();?>
+
+                    
+
+                </div><!--End -->
 
             </div>
 
@@ -36,4 +42,6 @@
 
     </div>
     <!-- /.container -->
-<?php include(TEMPLATE_FRONT . DS . "footer.php") ?>
+
+ 
+<?php include("../recources/templates/font/footer.php"); ?>
